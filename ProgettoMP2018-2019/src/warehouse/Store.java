@@ -18,7 +18,7 @@ public class Store implements AbstractObs {
     }
 
     public void getProduct() {
-        for (int index = 0; index < this.myWarehouse.getBox().size(); index++) {
+    	for (int index = 0; index < this.myWarehouse.getBox().size(); index++) {
             System.out.println("ho preso l'elemento in posizione" + index + "di tipo:" + this.myWarehouse.getBox().get(index));
         }
 

@@ -10,7 +10,7 @@ public class WareHouse extends AbstractSubj {
 
     public int availableSpace;
     private Boolean wareHouseEmpty = true;
-    private  List<Product> box;
+    private List<Product> box;
 
     public WareHouse(int boxSpace) {
     	availableSpace = boxSpace;
