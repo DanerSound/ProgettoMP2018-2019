@@ -22,7 +22,7 @@ public class StoreTest {
 	}
 
 	@Test
-	public void GivenAboxDecreaseSize(){
+	public void GivenAproductDecreaseBoxSize(){
 		wh.addItem(productTest);
 		int expectedBoxSize=0;
 		
