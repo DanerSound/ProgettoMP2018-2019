@@ -15,17 +15,17 @@ public class WareHouseTest {
 
     @Before
     public void initFixture() {
-        warehouse = new WareHouse(5);
+        warehouse = new WareHouse(5,5);
     }
 
     @Test
-    public void GivenAnProductIncreaseSize() {
-        int expectedSize = 1;
+    public void GivenAnProductIncreaseShelfSize() {
+        int expectedShelfSize = 1;
 
-        warehouse.addItem(productTest);
-        int actualSize = ;
+        warehouse.getMyShelves(0).placeProduct(productTest);
+        int actualShelfSize = warehouse.getMyShelves(0).elementsInShelf();
 
-        assertEquals(expectedSize, actualSize);
+        assertEquals(expectedShelfSize, actualShelfSize);
     }
     
     @Test
@@ -34,7 +34,7 @@ public class WareHouseTest {
     	boolean expectedState= false;
         
         add4ElementsForTest();
-        warehouse.addItem(productTest);
+        warehouse.addItemToShelf(productTest);
         
         boolean actualState = warehouse.getWareHouseEmpty();
         assertEquals(expectedState, actualState);
@@ -42,7 +42,7 @@ public class WareHouseTest {
     
     private void add4ElementsForTest(){
     	for(int index=0;index<4;index++) {
-    		warehouse.addItem(productTest);
+    		warehouse.addItemToShelf(productTest);
     	}
     }
 

@@ -12,8 +12,8 @@ public class WareHouse extends AbstractSubj {
 	private int wareHouseShelves;
 	private Shelf[] myShelves;
 
-	public WareHouse(int numberOfShelf,int spaceShelf) {
-		wareHouseShelves = numberOfShelf;
+	public WareHouse(int shelves,int spaceShelf) {
+		wareHouseShelves = shelves;
 		initShelves(spaceShelf);
 	}
 
@@ -23,7 +23,7 @@ public class WareHouse extends AbstractSubj {
 		}
 	}
 
-	public void addItem(Product product) {
+	public void addItemToShelf(Product product) {
 		for (int index = 0; index < wareHouseShelves; index++) {
 			myShelves[index].placeProduct(product);
 		}
@@ -36,6 +36,10 @@ public class WareHouse extends AbstractSubj {
 
 	public Boolean getWareHouseEmpty() {
 		return wareHouseEmpty;
+	}
+
+	public Shelf getMyShelves(int indexShelf) {
+		return myShelves[indexShelf];
 	}
 
 }
