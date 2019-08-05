@@ -23,13 +23,20 @@ public class StoreTest {
 
 	@Test
 	public void GivenAproductDecreaseBoxSize(){
-		wh.addItem(productTest);
+		fullWareHouse();
 		int expectedBoxSize=0;
 		
 		store.getProduct();
 		int actualBoxSize=wh.getBox().size();
 		
 		assertEquals(expectedBoxSize,actualBoxSize);
+	}
+
+	private void fullWareHouse() {
+	 	for(int index=0;index<5;index++) {
+    		wh.addItem(productTest);
+    	}
+		
 	}
 
 }
