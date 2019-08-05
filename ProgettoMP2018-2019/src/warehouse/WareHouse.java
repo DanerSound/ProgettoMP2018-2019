@@ -11,11 +11,12 @@ public class WareHouse extends AbstractSubj {
     public int availableSpace;
     private Boolean wareHouseEmpty = true;
     private List<Product> box;
-
+   // private List<Shelf> myShelfs;
+    
     public WareHouse(int boxSpace) {
     	availableSpace = boxSpace;
-        box = new ArrayList<>(availableSpace);
-
+       box = new ArrayList<>(availableSpace);
+    	
     }
 
     public void addItem(Product product){

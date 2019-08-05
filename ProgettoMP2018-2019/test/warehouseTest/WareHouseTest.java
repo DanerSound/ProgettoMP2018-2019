@@ -33,14 +33,14 @@ public class WareHouseTest {
     	
     	boolean expectedState= false;
         
-        add3ElementsForTest();
+        add4ElementsForTest();
         warehouse.addItem(productTest);
         
         boolean actualState = warehouse.getWareHouseEmpty();
         assertEquals(expectedState, actualState);
     }
     
-    private void add3ElementsForTest(){
+    private void add4ElementsForTest(){
     	for(int index=0;index<4;index++) {
     		warehouse.addItem(productTest);
     	}
