@@ -7,8 +7,6 @@ import org.junit.Test;
 import warehouse.WareHouse;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-
 
 public class WareHouseTest {
 
@@ -29,12 +27,23 @@ public class WareHouseTest {
 
         assertEquals(expectedSize, actualSize);
     }
-
+    
     @Test
     public void GivenLastElementChangeWareHouseState() {
-        warehouse.availableSpace = 0;
+    	
+    	boolean expectedState= false;
+        
+        add3ElementsForTest();
         warehouse.addItem(productTest);
-        assertFalse(warehouse.getWareHouseEmpty());
+        
+        boolean actualState = warehouse.getWareHouseEmpty();
+        assertEquals(expectedState, actualState);
+    }
+    
+    private void add3ElementsForTest(){
+    	for(int index=0;index<4;index++) {
+    		warehouse.addItem(productTest);
+    	}
     }
 
 }
