@@ -23,7 +23,7 @@ public class WareHouseTest {
         int expectedSize = 1;
 
         warehouse.addItem(productTest);
-        int actualSize = warehouse.getBox().size();
+        int actualSize = ;
 
         assertEquals(expectedSize, actualSize);
     }

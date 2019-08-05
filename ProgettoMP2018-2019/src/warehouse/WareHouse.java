@@ -8,38 +8,34 @@ import java.util.List;
 
 public class WareHouse extends AbstractSubj {
 
-    public int availableSpace;
-    private Boolean wareHouseEmpty = true;
-    private List<Product> box;
-   // private List<Shelf> myShelfs;
-    
-    public WareHouse(int boxSpace) {
-    	availableSpace = boxSpace;
-       box = new ArrayList<>(availableSpace);
-    	
-    }
+	private Boolean wareHouseEmpty = true;
+	private int wareHouseShelves;
+	private Shelf[] myShelves;
 
-    public void addItem(Product product){
+	public WareHouse(int numberOfShelf,int spaceShelf) {
+		wareHouseShelves = numberOfShelf;
+		initShelves(spaceShelf);
+	}
 
-        if(box.size()!= availableSpace){
-            box.add(product);     
-        } 
-        if(box.size()== availableSpace){
-            System.out.println(" il magazzino è pieno");
-            setWareEmpty(false);
-            notifyObservers(wareHouseEmpty);
-        }
-    }
-    
-    public void setWareEmpty(Boolean wareEmpty) {
-        this.wareHouseEmpty = wareEmpty;
-    }
+	private void initShelves(int spaceInShelf) {
+		for (int index = 0; index < wareHouseShelves; index++) {
+			myShelves[index] = new Shelf(spaceInShelf);
+		}
+	}
 
-    public Boolean getWareHouseEmpty() {
+	public void addItem(Product product) {
+		for (int index = 0; index < wareHouseShelves; index++) {
+			myShelves[index].placeProduct(product);
+		}
+		notifyObservers(false);
+	}
+
+	public void setWareEmpty(Boolean wareEmpty) {
+		this.wareHouseEmpty = wareEmpty;
+	}
+
+	public Boolean getWareHouseEmpty() {
 		return wareHouseEmpty;
 	}
 
-	public List<Product> getBox() {
-        return box;
-    }
 }
