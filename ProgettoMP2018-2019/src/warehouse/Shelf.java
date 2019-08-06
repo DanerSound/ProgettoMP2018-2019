@@ -20,8 +20,7 @@ public class Shelf {
 
         if (shelf.size() != availableSpace) {
             shelf.add(product);
-        }
-        if (shelf.size() == availableSpace) {
+        } else {
             System.out.println(" Lo scafale è pieno ");
             setEmptyShelf(false);
         }
@@ -37,6 +36,11 @@ public class Shelf {
         currentProduct = shelf.get(index);
         shelf.remove(index);
 
+        // Quando togli devi aggiornare il numero di elementi
+        // oppure devi fare in modo che la procedura is empty controlli
+        // da sola se l'array e' pieno
+        // usando isFull la cosa tornerebbe
+
         return currentProduct;
     }
 
@@ -49,4 +53,7 @@ public class Shelf {
     }
 
 
+    public boolean isFull() {
+        return shelf.size() == availableSpace;
+    }
 }

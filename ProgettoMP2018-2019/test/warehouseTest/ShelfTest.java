@@ -29,13 +29,14 @@ public class ShelfTest {
 
     @Test
     public void GivenLastElementChangeShelfState() {
-        boolean expectedShelfState = false;
-
-        add4ElementsToShelf();
         testShelf.placeProduct(productTest);
-        boolean actualShelfState = testShelf.isEmptyShelf();
-
-        assertEquals(expectedShelfState, actualShelfState);
+        testShelf.placeProduct(productTest);
+        testShelf.placeProduct(productTest);
+        testShelf.placeProduct(productTest);
+        assertEquals(testShelf.isFull(), false);
+        
+        testShelf.placeProduct(productTest);
+        assertEquals(testShelf.isFull(), true);
 
     }
 

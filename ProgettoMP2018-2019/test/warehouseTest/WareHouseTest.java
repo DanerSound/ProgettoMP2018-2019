@@ -15,7 +15,7 @@ public class WareHouseTest {
 
     @Before
     public void initFixture() {
-        warehouse = new WareHouse(5,5);
+        warehouse = new WareHouse(5, 5);
     }
 
     @Test
@@ -27,23 +27,25 @@ public class WareHouseTest {
 
         assertEquals(expectedShelfSize, actualShelfSize);
     }
-    
+
     @Test
     public void GivenLastElementChangeWareHouseState() {
-    	
-    	boolean expectedState= false;
-        
-        add4ElementsForTest();
-        warehouse.addItemToShelf(productTest);
-        
-        boolean actualState = warehouse.getWareHouseEmpty();
+
+        boolean expectedState = false;
+
+        // Questo codice e' brutto da vedere ma
+        // i test devono essere qualcosa di molto descrittivo
+        // e semplice, e questo codice e' piu' chiaro della chiamata
+        // a funzione
+        warehouse.addItemToShelf(0, productTest);
+        warehouse.addItemToShelf(0, productTest);
+        warehouse.addItemToShelf(0, productTest);
+        warehouse.addItemToShelf(0, productTest);
+        warehouse.addItemToShelf(0, productTest);
+        warehouse.addItemToShelf(0, productTest);
+
+        boolean actualState = warehouse.IsWareHouseFull();
         assertEquals(expectedState, actualState);
-    }
-    
-    private void add4ElementsForTest(){
-    	for(int index=0;index<4;index++) {
-    		warehouse.addItemToShelf(productTest);
-    	}
     }
 
 }
