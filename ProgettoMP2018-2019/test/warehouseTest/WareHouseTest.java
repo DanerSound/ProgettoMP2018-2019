@@ -1,9 +1,10 @@
 package warehouseTest;
 
 
-import myTools.Product;
 import org.junit.Before;
 import org.junit.Test;
+
+import tools.Product;
 import warehouse.WareHouse;
 
 import static org.junit.Assert.assertEquals;

@@ -1,4 +1,6 @@
-package myFactory;
+package factory;
+
+import factory.tools.Gun;
 
 class RealGun extends Gun {
 

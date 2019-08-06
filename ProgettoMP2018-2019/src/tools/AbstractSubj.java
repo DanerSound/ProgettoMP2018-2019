@@ -1,8 +1,8 @@
-package myTools;
+package tools;
 
 import java.util.ArrayList;
 
-import myTools.AbstractObs;
+import tools.AbstractObs;
 
 public abstract class AbstractSubj {
 

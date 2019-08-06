@@ -1,7 +1,4 @@
-package warehouse;
-
-import myFactory.Car;
-import myFactory.Gun;
+package factory.tools;
 
 public abstract class Factory {
     public abstract Car CreateCar();

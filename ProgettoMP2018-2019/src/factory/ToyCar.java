@@ -1,5 +1,6 @@
-package myFactory;
+package factory;
 
+import factory.tools.Car;
 
 public class ToyCar extends Car{
 

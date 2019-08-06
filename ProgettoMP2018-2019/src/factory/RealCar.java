@@ -1,4 +1,6 @@
-package myFactory;
+package factory;
+
+import factory.tools.Car;
 
 class RealCar extends Car {
 

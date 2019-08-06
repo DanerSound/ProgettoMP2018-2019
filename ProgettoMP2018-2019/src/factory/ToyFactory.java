@@ -1,8 +1,10 @@
-package myFactory;
+package factory;
 
-import myFactory.ToyCar;
-import myFactory.ToyGun;
-import warehouse.Factory;
+import factory.ToyCar;
+import factory.ToyGun;
+import factory.tools.Car;
+import factory.tools.Factory;
+import factory.tools.Gun;
 
 public class ToyFactory extends Factory{
 

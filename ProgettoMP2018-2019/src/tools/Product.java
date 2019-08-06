@@ -1,4 +1,4 @@
-package myTools;
+package tools;
 
 public interface Product {
     
