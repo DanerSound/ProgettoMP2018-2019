@@ -20,7 +20,10 @@ public class StoreTest {
     public void initFixture() {
         wh = new WareHouse(1, 5);
         store = new Store(wh);
-        productTest = new Product(){};
+
+        // Inizializzazione di un Mock
+        productTest = new Product() {
+        };
     }
 
     @Test
@@ -39,7 +42,7 @@ public class StoreTest {
         // Credo che il posto piu' giusto sia dentro Before.
 
         for (int index = 0; index < 5; index++) {
-            wh.addItem(productTest);
+            wh.addItemToShelf(productTest);
         }
 
     }
