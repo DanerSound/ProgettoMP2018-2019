@@ -17,6 +17,7 @@ public class WareHouseTest {
     @Before
     public void initFixture() {
         warehouse = new WareHouse(5, 5);
+        productTest = new Product() {}; 
     }
 
     @Test

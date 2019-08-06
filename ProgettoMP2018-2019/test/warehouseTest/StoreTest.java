@@ -19,7 +19,7 @@ public class StoreTest {
 	public void initFixture() {
 		wh = new WareHouse(1, 5);
 		store = new Store(wh);
-		productTest = new Product() {}; // Inizializzazione di un Mock
+		productTest = new Product() {};
 	}
 
 	@Test

@@ -21,11 +21,7 @@ public class Store implements AbstractObs {
 	public Product popProduct(int shelf, int position) {
 		return myWarehouse.getMyShelves(shelf).pickUpPrduct(position);
 	}
-
-// 	private void getProduct() {
-//		popProduct(shelf, int position);
-//	}
-
+	
 	public WareHouse getWarehouse() {
 		return myWarehouse;
 	}

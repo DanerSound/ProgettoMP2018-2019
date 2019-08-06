@@ -4,6 +4,7 @@ import static org.junit.Assert.*;
 
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.rules.ExpectedException;
 
 import tools.Product;
 import warehouse.Shelf;
@@ -15,10 +16,37 @@ public class ShelfTest {
 	@Before
 	public void initFixture() {
 		testShelf = new Shelf(5);
+		productTest = new Product() {}; 
 	}
 	
 	@Test
-	public void checkElementsInShelfAfterPickUpOne() {		
+	public void GivenAProductIncreaseElementsInShelf() {
+		int expectedElementsInShelf = 1;
+
+		testShelf.placeProduct(productTest);
+		int actualElementsInShelf = testShelf.elementsInShelf();
+
+		assertEquals(expectedElementsInShelf, actualElementsInShelf);
+	}
+	
+	@Test
+	public void GivenAllElementChangeShelfState() {
+		boolean expectedState = false;
+		
+		testShelf.placeProduct(productTest);
+		testShelf.placeProduct(productTest);
+		testShelf.placeProduct(productTest);
+		testShelf.placeProduct(productTest);
+		testShelf.placeProduct(productTest);
+		testShelf.placeProduct(productTest);
+		assertTrue(testShelf.isFull());
+		boolean actualState = testShelf.isEmptyShelf();
+		
+		assertEquals(expectedState, actualState);
+	}
+	
+	@Test
+	public void GivenAFullShelfCheckElementsAfterpickOne() {		
 		testShelf.placeProduct(productTest);
 		testShelf.placeProduct(productTest);
 		testShelf.placeProduct(productTest);
@@ -31,28 +59,9 @@ public class ShelfTest {
 		
 	}
 	
-	@Test
-	public void GivenAproductIncreaseElementsInShelf() {
-		int expectedElementsInShelf = 1;
 
-		testShelf.placeProduct(productTest);
-		int actualElementsInShelf = testShelf.elementsInShelf();
 
-		assertEquals(expectedElementsInShelf, actualElementsInShelf);
-	}
 
-	@Test
-	public void GivenLastElementChangeShelfState() {
-		testShelf.placeProduct(productTest);
-		testShelf.placeProduct(productTest);
-		testShelf.placeProduct(productTest);
-		testShelf.placeProduct(productTest);
-		assertEquals(testShelf.isFull(), false);
-
-		testShelf.placeProduct(productTest);
-		assertEquals(testShelf.isFull(), true);
-
-	}
 
 	@Test
 	public void Given5ElementsDecreaseSizeWhenPickOne() {
