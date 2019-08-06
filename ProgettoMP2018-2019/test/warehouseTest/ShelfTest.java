@@ -4,7 +4,6 @@ import static org.junit.Assert.*;
 
 import org.junit.Before;
 import org.junit.Test;
-import org.junit.rules.ExpectedException;
 
 import tools.Product;
 import warehouse.Shelf;
@@ -28,7 +27,6 @@ public class ShelfTest {
 
 		assertEquals(expectedElementsInShelf, actualElementsInShelf);
 	}
-	
 	@Test
 	public void GivenAllElementChangeShelfState() {
 		boolean expectedState = false;
@@ -44,7 +42,6 @@ public class ShelfTest {
 		
 		assertEquals(expectedState, actualState);
 	}
-	
 	@Test
 	public void GivenAFullShelfCheckElementsAfterpickOne() {		
 		testShelf.placeProduct(productTest);
@@ -58,11 +55,6 @@ public class ShelfTest {
 		assertFalse(testShelf.isFull());
 		
 	}
-	
-
-
-
-
 	@Test
 	public void Given5ElementsDecreaseSizeWhenPickOne() {
 		int expectedElementsInShelf = 4;
@@ -77,9 +69,5 @@ public class ShelfTest {
 		int actualElementsInShelf = testShelf.elementsInShelf();
 
 		assertEquals(expectedElementsInShelf, actualElementsInShelf);
-
 	}
-
-
-
 }

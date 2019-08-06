@@ -19,7 +19,8 @@ public class StoreTest {
 	public void initFixture() {
 		wh = new WareHouse(1, 5);
 		store = new Store(wh);
-		productTest = new Product() {};
+		productTest = new Product() {
+		};
 	}
 
 	@Test
@@ -30,10 +31,10 @@ public class StoreTest {
 		int actualElementsInShelf = wh.getMyShelves(0).elementsInShelf();
 
 		assertEquals(expectedElementsInShelf, actualElementsInShelf);
-
 	}
 
-	private void GivenAFullShelfChangeState() {
+	@Test
+	public void GivenAFullShelfChangeState() {
 		wh.addItemToShelf(0, productTest);
 		wh.addItemToShelf(0, productTest);
 		wh.addItemToShelf(0, productTest);
@@ -42,8 +43,23 @@ public class StoreTest {
 
 		assertTrue(wh.getMyShelves(0).isFull());
 
-		Product product = store.popProduct(0, 0);
+		productTest = store.popProduct(0, 0);
 		assertFalse(wh.getMyShelves(0).isFull());
-
 	}
+	
+	@Test
+	public void GivenAFullShelfTakeAllProduc() {
+		wh.addItemToShelf(0, productTest);
+		wh.addItemToShelf(0, productTest);
+		wh.addItemToShelf(0, productTest);
+		wh.addItemToShelf(0, productTest);
+		wh.addItemToShelf(0, productTest);
+		assertTrue(wh.getMyShelves(0).isFull());
+		
+		store.getProduct();
+		
+		assertFalse(wh.getMyShelves(0).isFull());	
+	}
+	
+	
 }

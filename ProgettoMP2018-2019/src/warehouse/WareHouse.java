@@ -42,4 +42,8 @@ public class WareHouse extends AbstractSubj {
         return isWareHouseEmpty;
     }
 
+	public int getWareHouseShelves() {
+		return wareHouseShelves;
+	}
+
 }
