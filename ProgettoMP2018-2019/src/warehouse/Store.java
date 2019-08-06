@@ -19,8 +19,7 @@ public class Store implements AbstractObs {
 	}
 
 	public void getProduct() {
-	//	TODO : devi prendere tutti gli elementi da uno scaffale e poi passare al succesivo, coglione di merda
-	// vedi gli appunti del maestro 
+	//	TODO : devi prendere tutti gli elementi da uno scaffale e poi passare al succesivo,
 		for(int index=0;index<warehouse.getWareHouseShelves();index++){		
 		System.out.println(popProduct(index, index));	
 		}
