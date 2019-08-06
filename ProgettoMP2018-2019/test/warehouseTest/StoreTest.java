@@ -6,8 +6,7 @@ import org.junit.Test;
 import warehouse.Store;
 import warehouse.WareHouse;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.fail;
+import static org.junit.Assert.*;
 
 
 public class StoreTest {
@@ -28,11 +27,23 @@ public class StoreTest {
 
     @Test
     public void GivenAproductDecreaseBoxSize() {
-        fullWareHouse();
-        int expectedBoxSize = 0;
 
-        store.getProduct();
-        fail();
+        // Si imposta il magazzino come pieno
+        wh.addItemToShelf(0, productTest);
+        wh.addItemToShelf(0, productTest);
+        wh.addItemToShelf(0, productTest);
+        wh.addItemToShelf(0, productTest);
+        wh.addItemToShelf(0, productTest);
+        wh.addItemToShelf(0, productTest);
+
+        // Si controlla che sia davvero pieno
+        assertTrue(wh.IsWareHouseFull());
+
+
+        // Per notrazione i metodi che tolgono un elemento da
+        // liste e array si chiamano Pop
+        Product product = store.popProduct();
+        assertFalse(wh.IsWareHouseFull());
     }
 
     private void fullWareHouse() {
@@ -41,9 +52,11 @@ public class StoreTest {
         // Devi instanziare producTest, non lo instanzi da nessuna parte
         // Credo che il posto piu' giusto sia dentro Before.
 
-        for (int index = 0; index < 5; index++) {
-            wh.addItemToShelf(productTest);
-        }
+        // Stesso discorso, devi sistemare il prodotto dentro uno scaffale
+//
+//        for (int index = 0; index < 5; index++) {
+//            wh.addItemToShelf(productTest);
+//        }
 
     }
 
