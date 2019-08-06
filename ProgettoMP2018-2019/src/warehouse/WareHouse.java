@@ -8,34 +8,38 @@ import java.util.List;
 
 public class WareHouse extends AbstractSubj {
 
-	private Boolean wareHouseEmpty = true;
-	private int wareHouseShelves;
-	private Shelf[] myShelves;
+    private Boolean wareHouseEmpty = true;
+    private int wareHouseShelves;
+    private Shelf[] myShelves;
 
-	public WareHouse(int numberOfShelf,int spaceShelf) {
-		wareHouseShelves = numberOfShelf;
-		initShelves(spaceShelf);
-	}
+    public WareHouse(int numberOfShelf, int spaceShelf) {
+        wareHouseShelves = numberOfShelf;
+        initShelves(spaceShelf);
+    }
 
-	private void initShelves(int spaceInShelf) {
-		for (int index = 0; index < wareHouseShelves; index++) {
-			myShelves[index] = new Shelf(spaceInShelf);
-		}
-	}
+    private void initShelves(int spaceInShelf) {
 
-	public void addItem(Product product) {
-		for (int index = 0; index < wareHouseShelves; index++) {
-			myShelves[index].placeProduct(product);
-		}
-		notifyObservers(false);
-	}
+        // Ho aggiunto anche questo
+        myShelves = new Shelf[wareHouseShelves];
 
-	public void setWareEmpty(Boolean wareEmpty) {
-		this.wareHouseEmpty = wareEmpty;
-	}
+        for (int index = 0; index < wareHouseShelves; index++) {
+            myShelves[index] = new Shelf(spaceInShelf);
+        }
+    }
 
-	public Boolean getWareHouseEmpty() {
-		return wareHouseEmpty;
-	}
+    public void addItem(Product product) {
+        for (int index = 0; index < wareHouseShelves; index++) {
+            myShelves[index].placeProduct(product);
+        }
+        notifyObservers(false);
+    }
+
+    public void setWareEmpty(Boolean wareEmpty) {
+        this.wareHouseEmpty = wareEmpty;
+    }
+
+    public Boolean getWareHouseEmpty() {
+        return wareHouseEmpty;
+    }
 
 }
