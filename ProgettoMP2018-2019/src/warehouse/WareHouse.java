@@ -15,25 +15,16 @@ public class WareHouse extends AbstractSubj {
     }
 
     private void initShelves(int spaceInShelf) {
-
-        // Ho aggiunto anche questo
         myShelves = new Shelf[wareHouseShelves];
-
         for (int index = 0; index < wareHouseShelves; index++) {
             myShelves[index] = new Shelf(spaceInShelf);
         }
     }
 
     public void addItemToShelf(int selected_shelf, Product product) {
-
-        // Questa cosa non torna
-        // Stai aggiungendo lo stesso oggetto all'interno di piu' scaffali
-        // Cosa non vera se l'oggetto che aggiungi e' uno solo
-
-        // Ho quindi corretto il tuo codice selezionando lo scaffale
-
         myShelves[selected_shelf].placeProduct(product);
         notifyObservers(false);
+        
     }
 
     public Boolean IsWareHouseEmpty() {

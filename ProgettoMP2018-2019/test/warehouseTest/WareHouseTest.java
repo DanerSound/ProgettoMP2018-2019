@@ -30,13 +30,8 @@ public class WareHouseTest {
 
     @Test
     public void GivenLastElementChangeWareHouseState() {
-
         boolean expectedState = false;
 
-        // Questo codice e' brutto da vedere ma
-        // i test devono essere qualcosa di molto descrittivo
-        // e semplice, e questo codice e' piu' chiaro della chiamata
-        // a funzione
         warehouse.addItemToShelf(0, productTest);
         warehouse.addItemToShelf(0, productTest);
         warehouse.addItemToShelf(0, productTest);
