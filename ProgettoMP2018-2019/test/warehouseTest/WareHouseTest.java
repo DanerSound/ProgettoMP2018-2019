@@ -7,6 +7,7 @@ import org.junit.Test;
 import warehouse.WareHouse;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.fail;
 
 public class WareHouseTest {
 
@@ -15,7 +16,7 @@ public class WareHouseTest {
 
     @Before
     public void initFixture() {
-        warehouse = new WareHouse(5);
+        warehouse = new WareHouse(1, 5);
     }
 
     @Test
@@ -23,27 +24,28 @@ public class WareHouseTest {
         int expectedSize = 1;
 
         warehouse.addItem(productTest);
-        int actualSize = ;
+        fail();
 
-        assertEquals(expectedSize, actualSize);
+//        int actualSize = 1;
+//        assertEquals(expectedSize, actualSize);
     }
-    
+
     @Test
     public void GivenLastElementChangeWareHouseState() {
-    	
-    	boolean expectedState= false;
-        
+
+        boolean expectedState = false;
+
         add4ElementsForTest();
         warehouse.addItem(productTest);
-        
+
         boolean actualState = warehouse.getWareHouseEmpty();
         assertEquals(expectedState, actualState);
     }
-    
-    private void add4ElementsForTest(){
-    	for(int index=0;index<4;index++) {
-    		warehouse.addItem(productTest);
-    	}
+
+    private void add4ElementsForTest() {
+        for (int index = 0; index < 4; index++) {
+            warehouse.addItem(productTest);
+        }
     }
 
 }
