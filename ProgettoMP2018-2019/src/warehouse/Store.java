@@ -33,5 +33,4 @@ public class Store implements AbstractObs {
 	public WareHouse getWarehouse() {
 		return warehouse;
 	}
-
 }

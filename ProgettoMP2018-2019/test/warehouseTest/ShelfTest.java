@@ -51,8 +51,9 @@ public class ShelfTest {
 		testShelf.placeProduct(productTest);
 		
 		testShelf.pickUpPrduct(0);
-			
-		assertFalse(testShelf.isFull());
+		
+		boolean assertNotFull = testShelf.isFull();
+		assertFalse(assertNotFull);
 		
 	}
 	@Test
