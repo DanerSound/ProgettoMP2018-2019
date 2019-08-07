@@ -37,7 +37,9 @@ public class ShelfTest {
 		testShelf.placeProduct(productTest);
 		testShelf.placeProduct(productTest);
 		testShelf.placeProduct(productTest);
-		assertTrue(testShelf.isFull());
+		boolean isFull=testShelf.isFull();
+		assertTrue(isFull);
+		
 		boolean actualState = testShelf.isEmptyShelf();
 		
 		assertEquals(expectedState, actualState);
@@ -52,8 +54,8 @@ public class ShelfTest {
 		
 		testShelf.pickUpPrduct(0);
 		
-		boolean assertNotFull = testShelf.isFull();
-		assertFalse(assertNotFull);
+		boolean notFull = testShelf.isFull();
+		assertFalse(notFull);
 		
 	}
 	@Test

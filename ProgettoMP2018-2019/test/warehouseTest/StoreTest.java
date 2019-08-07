@@ -40,12 +40,12 @@ public class StoreTest {
 		wh.addItemToShelf(0, productTest);
 		wh.addItemToShelf(0, productTest);
 		wh.addItemToShelf(0, productTest);
-		boolean	assertIsFull = wh.getMyShelves(0).isFull();
-		assertTrue(assertIsFull);
+		boolean	isFull = wh.getMyShelves(0).isFull();
+		assertTrue(isFull);
 
 		productTest = store.popProduct(0, 0);
-		boolean assertNotFull = wh.getMyShelves(0).isFull();
-		assertFalse(assertNotFull);
+		boolean notFull = wh.getMyShelves(0).isFull();
+		assertFalse(notFull);
 	}
 	
 	@Test
@@ -55,13 +55,14 @@ public class StoreTest {
 		wh.addItemToShelf(0, productTest);
 		wh.addItemToShelf(0, productTest);
 		wh.addItemToShelf(0, productTest);
-		boolean	assertIsFull = wh.getMyShelves(0).isFull();
-		assertTrue(assertIsFull);
+		boolean	isFull = wh.getMyShelves(0).isFull();
+		assertTrue(isFull);
 		
 		store.getProduct();
-		
-	 //	boolean assertIsEmpty =
-	//	assertFalse(wh.getMyShelves(0).isFull());	
+		boolean isEmpty=wh.getMyShelves(0).isEmptyShelf();
+		assertTrue(isEmpty);
+	 
+	
 	}
 	
 	
