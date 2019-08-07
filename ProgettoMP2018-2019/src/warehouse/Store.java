@@ -18,12 +18,12 @@ public class Store implements AbstractObs {
 		}
 	}
 
-	public void getProduct() {
+	public void getProduct() {	
 		for(int shelvesIndex=0;shelvesIndex<warehouse.getWareHouseShelves();shelvesIndex++){
-				Shelf shelf = warehouse.getMyShelves(shelvesIndex);
-				int productsInShelf=shelf.elementsInShelf();
+			Shelf shelf = warehouse.getMyShelves(shelvesIndex);
+			int	productsInShelf=shelf.elementsInShelf();
 			for(int productIndex =0;productIndex<productsInShelf;productIndex++) {
-				System.out.println(popProduct(shelvesIndex, shelvesIndex));	
+				System.out.println(popProduct(shelvesIndex, shelvesIndex));				
 			}
 		}
 	}
