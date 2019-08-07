@@ -3,7 +3,7 @@ package warehouseTest;
 import org.junit.Before;
 import org.junit.Test;
 
-import tools.Product;
+import abstractModels.Product;
 import warehouse.Store;
 import warehouse.WareHouse;
 
@@ -24,7 +24,7 @@ public class StoreTest {
 	}
 
 	@Test
-	public void GivenAproductIncreaseElemtsInshelf() {
+	public void GivenAProductIncreaseElemtsInshelf() {
 		int expectedElementsInShelf = 1;
 
 		wh.addItemToShelf(0, productTest);

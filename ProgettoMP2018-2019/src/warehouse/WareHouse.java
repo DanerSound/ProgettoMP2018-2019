@@ -1,7 +1,7 @@
 package warehouse;
 
-import tools.AbstractSubj;
-import tools.Product;
+import abstractModels.AbstractSubj;
+import abstractModels.Product;
 
 public class WareHouse extends AbstractSubj {
 

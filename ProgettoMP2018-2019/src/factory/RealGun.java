@@ -1,6 +1,6 @@
 package factory;
 
-import factory.tools.Gun;
+import factory.AbstractModels.Gun;
 
 class RealGun extends Gun {
 

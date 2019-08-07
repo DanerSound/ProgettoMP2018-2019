@@ -1,4 +1,4 @@
-package tools;
+package abstractModels;
 
 public interface Product {
     

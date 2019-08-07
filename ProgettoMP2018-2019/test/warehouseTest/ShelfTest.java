@@ -5,7 +5,7 @@ import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
 
-import tools.Product;
+import abstractModels.Product;
 import warehouse.Shelf;
 
 public class ShelfTest {

@@ -2,9 +2,9 @@ package factory;
 
 import factory.ToyCar;
 import factory.ToyGun;
-import factory.tools.Car;
-import factory.tools.Factory;
-import factory.tools.Gun;
+import factory.AbstractModels.Car;
+import factory.AbstractModels.Factory;
+import factory.AbstractModels.Gun;
 
 public class ToyFactory extends Factory{
 

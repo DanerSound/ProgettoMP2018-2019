@@ -2,9 +2,9 @@ package factory;
 
 import factory.RealCar;
 import factory.RealGun;
-import factory.tools.Car;
-import factory.tools.Factory;
-import factory.tools.Gun;
+import factory.AbstractModels.Car;
+import factory.AbstractModels.Factory;
+import factory.AbstractModels.Gun;
 
 public class RealFactory extends Factory{
 

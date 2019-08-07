@@ -2,7 +2,7 @@ package warehouse;
 
 import java.util.ArrayList;
 
-import tools.Product;
+import abstractModels.Product;
 
 public class Shelf {
 

@@ -1,4 +1,4 @@
-package factory.tools;
+package factory.AbstractModels;
 
 public abstract class Factory {
     public abstract Car CreateCar();

@@ -1,7 +1,7 @@
 package warehouse;
 
-import tools.AbstractObs;
-import tools.Product;
+import abstractModels.AbstractObs;
+import abstractModels.Product;
 
 public class Store implements AbstractObs {
 
