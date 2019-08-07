@@ -18,12 +18,19 @@ public class Shelf {
 
     public void placeProduct(Product product) {
 
-        if (shelf.size() != availableSpace) {
-            shelf.add(product);
-        } else {
-            System.out.println(" Lo scafale è pieno ");
-            setEmptyShelf(false);
-        }
+//      if (shelf.size() != availableSpace) {
+//            shelf.add(product);
+//      } else {
+//          System.out.println(" Lo scafale è pieno ");
+//          setEmptyShelf(false);
+//      }
+    	
+    	try {
+    		shelf.add(product);
+		} catch (Exception e) {
+			setEmptyShelf(false);
+			System.out.println(" Lo scafale è pieno ");	
+		}     	
     }
 
     public void setEmptyShelf(boolean emptyShelf) {
