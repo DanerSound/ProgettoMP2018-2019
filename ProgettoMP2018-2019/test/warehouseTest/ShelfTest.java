@@ -59,7 +59,7 @@ public class ShelfTest {
 		
 	}
 	@Test
-	public void Given5ElementsDecreaseSizeWhenPickOne() {
+	public void GivenAFullShelfDecreaseSizeWhenPickOne() {
 		int expectedElementsInShelf = 4;
 
 		testShelf.placeProduct(productTest);

@@ -7,6 +7,7 @@ import abstractModels.Product;
 import warehouse.WareHouse;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 public class WareHouseTest {
 
@@ -15,25 +16,24 @@ public class WareHouseTest {
 
 	@Before
 	public void initFixture() {
-		warehouse = new WareHouse(5, 5);
+		warehouse = new WareHouse(1, 5);
 		productTest = new Product() {
 		};
 	}
-
+	
 	@Test
 	public void GivenAnProductIncreaseShelfSize() {
 		int expectedShelfSize = 1;
 
-		warehouse.getMyShelves(0).placeProduct(productTest);
-		int actualShelfSize = warehouse.getMyShelves(0).elementsInShelf();
+		warehouse.getShelves(0).placeProduct(productTest);
+		int actualShelfSize = warehouse.getShelves(0).elementsInShelf();
 
 		assertEquals(expectedShelfSize, actualShelfSize);
 	}
-
+	
 	@Test
-	public void GivenLastElementChangeWareHouseState() {
-		boolean expectedState = false;
-
+	public void GivenAllElementsToShelfCheckState() {
+		
 		warehouse.addItemToShelf(0, productTest);
 		warehouse.addItemToShelf(0, productTest);
 		warehouse.addItemToShelf(0, productTest);
@@ -42,6 +42,19 @@ public class WareHouseTest {
 		warehouse.addItemToShelf(0, productTest);
 
 		boolean actualState = warehouse.IsWareHouseFull();
-		assertEquals(expectedState, actualState);
+		assertTrue(actualState);
+	}
+	
+	@Test
+	public void GivenAWareHouseCheckIfiSFull() {
+		warehouse.addItemToShelf(0, productTest);
+		warehouse.addItemToShelf(0, productTest);
+		warehouse.addItemToShelf(0, productTest);
+		warehouse.addItemToShelf(0, productTest);
+		warehouse.addItemToShelf(0, productTest);
+		warehouse.addItemToShelf(0, productTest);
+		
+		boolean actualState=warehouse.IsWareHouseFull();
+		assertTrue(actualState);
 	}
 }

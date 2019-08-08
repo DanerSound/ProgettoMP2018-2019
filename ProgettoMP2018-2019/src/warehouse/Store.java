@@ -20,7 +20,7 @@ public class Store implements AbstractObs {
 
 	public void getProduct() {	
 		for(int shelvesIndex=0;shelvesIndex<warehouse.getWareHouseShelves();shelvesIndex++){
-			Shelf shelf = warehouse.getMyShelves(shelvesIndex);
+			Shelf shelf = warehouse.getShelves(shelvesIndex);
 			int	productsInShelf=shelf.elementsInShelf();
 			for(int productIndex =0;productIndex<productsInShelf;productIndex++) {
 				System.out.println(popProduct(shelvesIndex, shelvesIndex));				
@@ -29,7 +29,7 @@ public class Store implements AbstractObs {
 	}
 
 	public Product popProduct(int shelf, int position) {
-		return warehouse.getMyShelves(shelf).pickUpPrduct(position);
+		return warehouse.getShelves(shelf).pickUpPrduct(position);
 	}
 	
 	public WareHouse getWarehouse() {
