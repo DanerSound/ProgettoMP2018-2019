@@ -5,7 +5,7 @@ import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
 
-import myTools.Product;
+import abstractModels.Product;
 import warehouse.Shelf;
 
 public class ShelfTest {
@@ -15,24 +15,11 @@ public class ShelfTest {
 	@Before
 	public void initFixture() {
 		testShelf = new Shelf(5);
+		productTest = new Product() {}; 
 	}
 	
 	@Test
-	public void checkElementsInShelfAfterPickUpOne() {		
-		testShelf.placeProduct(productTest);
-		testShelf.placeProduct(productTest);
-		testShelf.placeProduct(productTest);
-		testShelf.placeProduct(productTest);
-		testShelf.placeProduct(productTest);
-		
-		testShelf.pickUpPrduct(0);
-			
-		assertFalse(testShelf.isFull());
-		
-	}
-	
-	@Test
-	public void GivenAproductIncreaseElementsInShelf() {
+	public void GivenAProductIncreaseElementsInShelf() {
 		int expectedElementsInShelf = 1;
 
 		testShelf.placeProduct(productTest);
@@ -40,20 +27,37 @@ public class ShelfTest {
 
 		assertEquals(expectedElementsInShelf, actualElementsInShelf);
 	}
-
 	@Test
-	public void GivenLastElementChangeShelfState() {
+	public void GivenAllElementChangeShelfState() {
+		boolean expectedState = false;
+		
 		testShelf.placeProduct(productTest);
 		testShelf.placeProduct(productTest);
 		testShelf.placeProduct(productTest);
 		testShelf.placeProduct(productTest);
-		assertEquals(testShelf.isFull(), false);
-
 		testShelf.placeProduct(productTest);
-		assertEquals(testShelf.isFull(), true);
-
+		testShelf.placeProduct(productTest);
+		boolean isEmptyShelf=testShelf.isEmptyShelf();
+		assertFalse(isEmptyShelf);
+		
+		boolean actualState = testShelf.isEmptyShelf();
+		
+		assertEquals(expectedState, actualState);
 	}
-
+	@Test
+	public void GivenAFullShelfCheckElementsAfterpickOne() {		
+		testShelf.placeProduct(productTest);
+		testShelf.placeProduct(productTest);
+		testShelf.placeProduct(productTest);
+		testShelf.placeProduct(productTest);
+		testShelf.placeProduct(productTest);
+		
+		testShelf.pickUpPrduct(0);
+		
+		boolean notFull = testShelf.isFull();
+		assertFalse(notFull);
+		
+	}
 	@Test
 	public void Given5ElementsDecreaseSizeWhenPickOne() {
 		int expectedElementsInShelf = 4;
@@ -68,9 +72,5 @@ public class ShelfTest {
 		int actualElementsInShelf = testShelf.elementsInShelf();
 
 		assertEquals(expectedElementsInShelf, actualElementsInShelf);
-
 	}
-
-
-
 }

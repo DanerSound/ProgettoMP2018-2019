@@ -1,4 +1,6 @@
-package myFactory;
+package factory;
+
+import factory.AbstractModels.Gun;
 
 public class ToyGun extends Gun{
 

@@ -1,6 +1,6 @@
-package myFactory;
+package factory.AbstractModels;
 
-import myTools.Product;
+import abstractModels.Product;
 
 public abstract class Gun implements Product{ 
     public abstract String setCode();

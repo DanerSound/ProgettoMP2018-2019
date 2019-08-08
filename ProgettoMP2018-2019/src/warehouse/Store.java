@@ -1,33 +1,38 @@
 package warehouse;
 
-import myTools.AbstractObs;
-import myTools.Product;
+import abstractModels.AbstractObs;
+import abstractModels.Product;
 
 public class Store implements AbstractObs {
 
-    private WareHouse myWarehouse;
+	private WareHouse warehouse;
 
-    public Store(WareHouse myWarehouse) {
-        this.myWarehouse = myWarehouse;
-    }
+	public Store(WareHouse warehouse) {
+		this.warehouse = warehouse;
+	}
 
-    @Override
-    public void update(boolean state) {
-        if (!state) {
-            getProduct();
-        }
-    }
+	@Override
+	public void update(boolean state) {
+		if (!state) {
+			getProduct();
+		}
+	}
 
-    private void getProduct() {
+	public void getProduct() {	
+		for(int shelvesIndex=0;shelvesIndex<warehouse.getWareHouseShelves();shelvesIndex++){
+			Shelf shelf = warehouse.getMyShelves(shelvesIndex);
+			int	productsInShelf=shelf.elementsInShelf();
+			for(int productIndex =0;productIndex<productsInShelf;productIndex++) {
+				System.out.println(popProduct(shelvesIndex, shelvesIndex));				
+			}
+		}
+	}
 
-
-    }
-
-    public WareHouse getWarehouse() {
-        return myWarehouse;
-    }
-
-    public Product popProduct() {
-        return myWarehouse.getMyShelves(0).pickUpPrduct(0);
-    }
+	public Product popProduct(int shelf, int position) {
+		return warehouse.getMyShelves(shelf).pickUpPrduct(position);
+	}
+	
+	public WareHouse getWarehouse() {
+		return warehouse;
+	}
 }

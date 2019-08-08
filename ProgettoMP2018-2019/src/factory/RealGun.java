@@ -1,4 +1,6 @@
-package myFactory;
+package factory;
+
+import factory.AbstractModels.Gun;
 
 class RealGun extends Gun {
 

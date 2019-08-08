@@ -1,63 +1,69 @@
 package warehouseTest;
 
-import myTools.Product;
 import org.junit.Before;
 import org.junit.Test;
+
+import abstractModels.Product;
 import warehouse.Store;
 import warehouse.WareHouse;
 
 import static org.junit.Assert.*;
 
-
 public class StoreTest {
 
-    private Store store;
-    private WareHouse wh;
-    private Product productTest;
+	private Store store;
+	private WareHouse wh;
+	private Product productTest;
 
-    @Before
-    public void initFixture() {
-        wh = new WareHouse(1, 5);
-        store = new Store(wh);
+	@Before
+	public void initFixture() {
+		wh = new WareHouse(1, 5);
+		store = new Store(wh);
+		productTest = new Product() {
+		};
+	}
 
-        // Inizializzazione di un Mock
-        productTest = new Product() {
-        };
-    }
+	@Test
+	public void GivenAProductIncreaseElemtsInshelf() {
+		int expectedElementsInShelf = 1;
 
-    @Test
-    public void GivenAproductDecreaseBoxSize() {
+		wh.addItemToShelf(0, productTest);
+		int actualElementsInShelf = wh.getMyShelves(0).elementsInShelf();
 
-        // Si imposta il magazzino come pieno
-        wh.addItemToShelf(0, productTest);
-        wh.addItemToShelf(0, productTest);
-        wh.addItemToShelf(0, productTest);
-        wh.addItemToShelf(0, productTest);
-        wh.addItemToShelf(0, productTest);
-        wh.addItemToShelf(0, productTest);
+		assertEquals(expectedElementsInShelf, actualElementsInShelf);
+	}
 
-        // Si controlla che sia davvero pieno
-        assertTrue(wh.IsWareHouseFull());
+	@Test
+	public void GivenAFullShelfChangeState() {
+		wh.addItemToShelf(0, productTest);
+		wh.addItemToShelf(0, productTest);
+		wh.addItemToShelf(0, productTest);
+		wh.addItemToShelf(0, productTest);
+		wh.addItemToShelf(0, productTest);
+		boolean	isFull = wh.getMyShelves(0).isFull();
+		assertTrue(isFull);
 
-
-        // Per notrazione i metodi che tolgono un elemento da
-        // liste e array si chiamano Pop
-        Product product = store.popProduct();
-        assertFalse(wh.IsWareHouseFull());
-    }
-
-    private void fullWareHouse() {
-
-        // L'errore e' qui dentro
-        // Devi instanziare producTest, non lo instanzi da nessuna parte
-        // Credo che il posto piu' giusto sia dentro Before.
-
-        // Stesso discorso, devi sistemare il prodotto dentro uno scaffale
-//
-//        for (int index = 0; index < 5; index++) {
-//            wh.addItemToShelf(productTest);
-//        }
-
-    }
-
+		productTest = store.popProduct(0, 0);
+		boolean notFull = wh.getMyShelves(0).isFull();
+		assertFalse(notFull);
+	}
+	
+	@Test
+	public void GivenAFullShelfTakeAllProduc() {
+		wh.addItemToShelf(0, productTest);
+		wh.addItemToShelf(0, productTest);
+		wh.addItemToShelf(0, productTest);
+		wh.addItemToShelf(0, productTest);
+		wh.addItemToShelf(0, productTest);
+		boolean	isFull = wh.getMyShelves(0).isFull();
+		assertTrue(isFull);
+		
+		store.getProduct();
+		boolean isEmpty=wh.getMyShelves(0).isEmptyShelf();
+		assertTrue(isEmpty);
+	 
+	
+	}
+	
+	
 }
