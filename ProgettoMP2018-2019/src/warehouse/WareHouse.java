@@ -1,44 +1,51 @@
 package warehouse;
 
-import myTools.AbstractSubj;
-import myTools.Product;
-
-import java.util.ArrayList;
-import java.util.List;
+import abstractModels.AbstractSubj;
+import abstractModels.Product;
 
 public class WareHouse extends AbstractSubj {
 
-    public int availableSpace;
-    private Boolean wareHouseEmpty = true;
-    private List<Product> box;
+    private Boolean isWareHouseEmpty = true;
+    private int wareHouseShelves;
+    private Shelf[] shelves;
 
-    public WareHouse(int boxSpace) {
-    	availableSpace = boxSpace;
-        box = new ArrayList<>(availableSpace);
-
+    public WareHouse(int shelves, int spaceShelf) {
+        wareHouseShelves = shelves;
+        initShelves(spaceShelf);
     }
 
-    public void addItem(Product product){
-
-        if(box.size()!= availableSpace){
-            box.add(product);     
-        } 
-        if(box.size()== availableSpace){
-            System.out.println(" il magazzino è pieno");
-            setWareEmpty(false);
-            notifyObservers(wareHouseEmpty);
+    private void initShelves(int spaceInShelf) {
+        shelves = new Shelf[wareHouseShelves];
+        for (int index = 0; index < wareHouseShelves; index++) {
+            shelves[index] = new Shelf(spaceInShelf);
         }
     }
+
+    public void addItemToShelf(int selected_shelf, Product product) {
+        shelves[selected_shelf].placeProduct(product);
+        notifyObservers(false);      
+    }
     
-    public void setWareEmpty(Boolean wareEmpty) {
-        this.wareHouseEmpty = wareEmpty;
+    public Boolean IsWareHouseFull() {
+        boolean all_shelfs_full = true;
+        for (int indexShelf = 0; indexShelf < wareHouseShelves; indexShelf++) {
+            all_shelfs_full &= shelves[indexShelf].isFull();
+        }
+        return all_shelfs_full;
     }
 
-    public Boolean getWareHouseEmpty() {
-		return wareHouseEmpty;
+    public Shelf getShelf(int indexShelf) {
+        return shelves[indexShelf];
+    }
+
+    public Boolean IsWareHouseEmpty() {
+        return isWareHouseEmpty;
+    }
+
+	public int getWareHouseShelves() {
+		return wareHouseShelves;
 	}
+	
+	
 
-	public List<Product> getBox() {
-        return box;
-    }
 }

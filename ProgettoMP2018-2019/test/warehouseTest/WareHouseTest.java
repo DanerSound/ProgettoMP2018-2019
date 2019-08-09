@@ -1,49 +1,60 @@
 package warehouseTest;
 
-
-import myTools.Product;
 import org.junit.Before;
 import org.junit.Test;
+
+import abstractModels.Product;
 import warehouse.WareHouse;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 public class WareHouseTest {
 
-    private WareHouse warehouse;
-    private Product productTest;
+	private WareHouse warehouse;
+	private Product productTest;
 
-    @Before
-    public void initFixture() {
-        warehouse = new WareHouse(5);
-    }
+	@Before
+	public void initFixture() {
+		warehouse = new WareHouse(1, 5);
+		productTest = new Product() {
+		};
+	}
+	
+	@Test
+	public void GivenAnProductIncreaseShelfSize() {
+		int expectedShelfSize = 1;
 
-    @Test
-    public void GivenAnProductIncreaseSize() {
-        int expectedSize = 1;
+		warehouse.getShelf(0).placeProduct(productTest);
+		int actualShelfSize = warehouse.getShelf(0).elementsInShelf();
 
-        warehouse.addItem(productTest);
-        int actualSize = warehouse.getBox().size();
+		assertEquals(expectedShelfSize, actualShelfSize);
+	}
+	
+	@Test
+	public void GivenAllElementsToShelfCheckState() {
+		
+		warehouse.addItemToShelf(0, productTest);
+		warehouse.addItemToShelf(0, productTest);
+		warehouse.addItemToShelf(0, productTest);
+		warehouse.addItemToShelf(0, productTest);
+		warehouse.addItemToShelf(0, productTest);
+		warehouse.addItemToShelf(0, productTest);
 
-        assertEquals(expectedSize, actualSize);
-    }
-    
-    @Test
-    public void GivenLastElementChangeWareHouseState() {
-    	
-    	boolean expectedState= false;
-        
-        add3ElementsForTest();
-        warehouse.addItem(productTest);
-        
-        boolean actualState = warehouse.getWareHouseEmpty();
-        assertEquals(expectedState, actualState);
-    }
-    
-    private void add3ElementsForTest(){
-    	for(int index=0;index<4;index++) {
-    		warehouse.addItem(productTest);
-    	}
-    }
-
+		boolean actualState = warehouse.IsWareHouseFull();
+		assertTrue(actualState);
+	}
+	
+	@Test
+	public void GivenAWareHouseCheckIfiSFull() {
+		warehouse.addItemToShelf(0, productTest);
+		warehouse.addItemToShelf(0, productTest);
+		warehouse.addItemToShelf(0, productTest);
+		warehouse.addItemToShelf(0, productTest);
+		warehouse.addItemToShelf(0, productTest);
+		warehouse.addItemToShelf(0, productTest);
+		
+		boolean actualState=warehouse.IsWareHouseFull();
+		assertTrue(actualState);
+	}
 }
