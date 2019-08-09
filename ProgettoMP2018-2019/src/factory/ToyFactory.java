@@ -1,21 +1,21 @@
 package factory;
 
-import factory.ToyCar;
-import factory.ToyGun;
-import factory.AbstractModels.Car;
-import factory.AbstractModels.Factory;
-import factory.AbstractModels.Gun;
+import facotry.AbstractModels1.Chair;
+import facotry.AbstractModels1.Pot;
+import facotry.AbstractModels1.ProductsFactory;
 
-public class ToyFactory extends Factory{
+public class ToyFactory extends ProductsFactory{
 
-    @Override
-    public Car CreateCar() {
-        return new ToyCar();
-    }
+	@Override
+	public Pot createAPot() {
+		return new ToyPot();
+	}
 
-    @Override
-    public Gun CreateGun() {
-        return new ToyGun();
-    }
+	@Override
+	public Chair createAChair() {		
+		return new ToyChair();
+	}
+
+
     
 }

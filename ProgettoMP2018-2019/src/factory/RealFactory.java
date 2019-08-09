@@ -1,19 +1,21 @@
 package factory;
 
-import factory.RealCar;
-import factory.RealGun;
-import factory.AbstractModels.Car;
-import factory.AbstractModels.Factory;
-import factory.AbstractModels.Gun;
+import facotry.AbstractModels1.Chair;
+import facotry.AbstractModels1.Pot;
+import facotry.AbstractModels1.ProductsFactory;
 
-public class RealFactory extends Factory{
+public class RealFactory extends ProductsFactory{
 
-    @Override
-    public Car CreateCar() {
-        return new RealCar();
-    }
-    @Override
-    public Gun CreateGun() {
-        return new RealGun();
-    } 
+	@Override
+	public Pot createAPot() {
+		return new RealPot();
+	}
+
+	@Override
+	public Chair createAChair() {
+		return new RealChair();
+	}
+
+
+
 }
