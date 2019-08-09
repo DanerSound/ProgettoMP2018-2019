@@ -20,7 +20,7 @@ public class WareHouseTest {
 		productTest = new Product() {
 		};
 	}
-	
+
 	@Test
 	public void GivenAnProductIncreaseShelfSize() {
 		int expectedShelfSize = 1;
@@ -30,10 +30,10 @@ public class WareHouseTest {
 
 		assertEquals(expectedShelfSize, actualShelfSize);
 	}
-	
+
 	@Test
 	public void GivenAllElementsToShelfCheckState() {
-		
+
 		warehouse.addItemToShelf(0, productTest);
 		warehouse.addItemToShelf(0, productTest);
 		warehouse.addItemToShelf(0, productTest);
@@ -44,7 +44,7 @@ public class WareHouseTest {
 		boolean actualState = warehouse.IsWareHouseFull();
 		assertTrue(actualState);
 	}
-	
+
 	@Test
 	public void GivenAWareHouseCheckIfiSFull() {
 		warehouse.addItemToShelf(0, productTest);
@@ -53,8 +53,8 @@ public class WareHouseTest {
 		warehouse.addItemToShelf(0, productTest);
 		warehouse.addItemToShelf(0, productTest);
 		warehouse.addItemToShelf(0, productTest);
-		
-		boolean actualState=warehouse.IsWareHouseFull();
+
+		boolean actualState = warehouse.IsWareHouseFull();
 		assertTrue(actualState);
 	}
 }
