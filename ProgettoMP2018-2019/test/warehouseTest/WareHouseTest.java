@@ -25,8 +25,8 @@ public class WareHouseTest {
 	public void GivenAnProductIncreaseShelfSize() {
 		int expectedShelfSize = 1;
 
-		warehouse.getShelves(0).placeProduct(productTest);
-		int actualShelfSize = warehouse.getShelves(0).elementsInShelf();
+		warehouse.getShelf(0).placeProduct(productTest);
+		int actualShelfSize = warehouse.getShelf(0).elementsInShelf();
 
 		assertEquals(expectedShelfSize, actualShelfSize);
 	}

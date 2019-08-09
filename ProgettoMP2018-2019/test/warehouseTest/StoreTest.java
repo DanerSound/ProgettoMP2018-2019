@@ -28,7 +28,7 @@ public class StoreTest {
 		int expectedElementsInShelf = 1;
 
 		wh.addItemToShelf(0, productTest);
-		int actualElementsInShelf = wh.getShelves(0).elementsInShelf();
+		int actualElementsInShelf = wh.getShelf(0).elementsInShelf();
 
 		assertEquals(expectedElementsInShelf, actualElementsInShelf);
 	}
@@ -42,7 +42,7 @@ public class StoreTest {
 		wh.addItemToShelf(0, productTest);
 		wh.addItemToShelf(0, productTest);
 		
-		boolean isEmpty = wh.getShelves(0).isEmptyShelf();
+		boolean isEmpty = wh.getShelf(0).isEmptyShelf();
 		assertFalse(isEmpty);
 		
 
@@ -57,11 +57,11 @@ public class StoreTest {
 		wh.addItemToShelf(0, productTest);
 		wh.addItemToShelf(0, productTest);
 		wh.addItemToShelf(0, productTest);
-		boolean	isFull = wh.getShelves(0).isFull();
+		boolean	isFull = wh.getShelf(0).isFull();
 		assertTrue(isFull);
 		
 		productTest = store.popProduct(0, 4);
-		int actualElementsInShelf=wh.getShelves(0).elementsInShelf();
+		int actualElementsInShelf=wh.getShelf(0).elementsInShelf();
 		
 		assertEquals(expectedElementsInShelf, actualElementsInShelf);
 	}
@@ -73,11 +73,11 @@ public class StoreTest {
 		wh.addItemToShelf(0, productTest);
 		wh.addItemToShelf(0, productTest);
 		wh.addItemToShelf(0, productTest);
-		boolean	isFull = wh.getShelves(0).isFull();
+		boolean	isFull = wh.getShelf(0).isFull();
 		assertTrue(isFull);
 		
 		store.getProduct();
-		boolean isEmpty=wh.getShelves(0).isEmptyShelf();
+		boolean isEmpty=wh.getShelf(0).isEmptyShelf();
 		assertTrue(isEmpty);
 	}	
 }

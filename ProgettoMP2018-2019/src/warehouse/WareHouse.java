@@ -34,7 +34,7 @@ public class WareHouse extends AbstractSubj {
         return all_shelfs_full;
     }
 
-    public Shelf getShelves(int indexShelf) {
+    public Shelf getShelf(int indexShelf) {
         return shelves[indexShelf];
     }
 
