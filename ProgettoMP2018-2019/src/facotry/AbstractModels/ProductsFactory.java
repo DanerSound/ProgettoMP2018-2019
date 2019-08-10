@@ -1,4 +1,4 @@
-package facotry.AbstractModels1;
+package facotry.AbstractModels;
 
 public abstract class ProductsFactory {
 	public abstract Pot createAPot();

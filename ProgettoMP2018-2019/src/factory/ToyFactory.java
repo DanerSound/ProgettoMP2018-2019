@@ -1,8 +1,8 @@
 package factory;
 
-import facotry.AbstractModels1.Chair;
-import facotry.AbstractModels1.Pot;
-import facotry.AbstractModels1.ProductsFactory;
+import facotry.AbstractModels.Chair;
+import facotry.AbstractModels.Pot;
+import facotry.AbstractModels.ProductsFactory;
 
 public class ToyFactory extends ProductsFactory{
 
