@@ -15,6 +15,7 @@ public class Store implements AbstractObs {
 	public void update(boolean state) {
 		if (!state) {
 			getProduct();
+			System.out.println("Taked all products from Warehouse");
 		}
 	}
 
@@ -23,8 +24,8 @@ public class Store implements AbstractObs {
 			Shelf shelf = warehouse.getShelf(shelvesIndex);
 			int	productsInShelf=shelf.elementsInShelf();
 			for(int productIndex =0;productIndex<productsInShelf;productIndex++) {
-				System.out.println(popProduct(shelvesIndex, shelvesIndex));				
-			}
+				popProduct(shelvesIndex, shelvesIndex);
+			}	
 		}
 	}
 

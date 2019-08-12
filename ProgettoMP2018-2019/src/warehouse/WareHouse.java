@@ -22,8 +22,10 @@ public class WareHouse extends AbstractSubj {
     }
 
     public void addItemToShelf(int selected_shelf, Product product) {
-        shelves[selected_shelf].placeProduct(product);
-        notifyObservers(false);      
+    	boolean freeSpace=shelves[selected_shelf].placeProduct(product);
+    	if(!freeSpace) {
+    		notifyObservers(false);
+    	}
     }
     
     public Boolean IsWareHouseFull() {
