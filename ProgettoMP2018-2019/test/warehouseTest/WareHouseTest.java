@@ -39,7 +39,6 @@ public class WareHouseTest {
 		warehouse.addItemToShelf(0, productTest);
 		warehouse.addItemToShelf(0, productTest);
 		warehouse.addItemToShelf(0, productTest);
-		warehouse.addItemToShelf(0, productTest);
 
 		boolean actualState = warehouse.IsWareHouseFull();
 		assertTrue(actualState);
@@ -52,8 +51,7 @@ public class WareHouseTest {
 		warehouse.addItemToShelf(0, productTest);
 		warehouse.addItemToShelf(0, productTest);
 		warehouse.addItemToShelf(0, productTest);
-		warehouse.addItemToShelf(0, productTest);
-
+	
 		boolean actualState = warehouse.IsWareHouseFull();
 		assertTrue(actualState);
 	}

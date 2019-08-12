@@ -15,14 +15,12 @@ public class Shelf {
 		shelf = new ArrayList<>(availableSpace);
 	}
 
-	public void placeProduct(Product product) {
-
-		if (shelf.size() == availableSpace) {
-			setEmptyShelf(false);
-			System.out.println(" Lo scafale è pieno ");
-		} else {
-			shelf.add(product);
+	public boolean  placeProduct(Product product) {
+		shelf.add(product);
+		if (shelf.size() == availableSpace) {			
+		setEmptyShelf(false);
 		}
+		return isEmptyShelf();
 	}
 
 	public Product pickUpPrduct(int index) {
