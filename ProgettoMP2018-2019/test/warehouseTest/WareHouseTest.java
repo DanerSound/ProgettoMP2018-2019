@@ -33,12 +33,7 @@ public class WareHouseTest {
 
 	@Test
 	public void GivenAllElementsToShelfCheckState() {
-
-		warehouse.addItemToShelf(0, productTest);
-		warehouse.addItemToShelf(0, productTest);
-		warehouse.addItemToShelf(0, productTest);
-		warehouse.addItemToShelf(0, productTest);
-		warehouse.addItemToShelf(0, productTest);
+		productPlacer();
 
 		boolean actualState = warehouse.IsWareHouseFull();
 		assertTrue(actualState);
@@ -46,13 +41,18 @@ public class WareHouseTest {
 
 	@Test
 	public void GivenAWareHouseCheckIfiSFull() {
-		warehouse.addItemToShelf(0, productTest);
-		warehouse.addItemToShelf(0, productTest);
-		warehouse.addItemToShelf(0, productTest);
-		warehouse.addItemToShelf(0, productTest);
-		warehouse.addItemToShelf(0, productTest);
-	
+		productPlacer();
+
 		boolean actualState = warehouse.IsWareHouseFull();
 		assertTrue(actualState);
 	}
+
+	private void productPlacer() {
+		warehouse.addItemToShelf(0, productTest);
+		warehouse.addItemToShelf(0, productTest);
+		warehouse.addItemToShelf(0, productTest);
+		warehouse.addItemToShelf(0, productTest);
+		warehouse.addItemToShelf(0, productTest);
+	}
+
 }

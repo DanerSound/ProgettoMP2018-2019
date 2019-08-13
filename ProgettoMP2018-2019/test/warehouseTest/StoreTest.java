@@ -35,11 +35,7 @@ public class StoreTest {
 
 	@Test
 	public void GivenAFullShelfChangeState() {
-		wh.addItemToShelf(0, productTest);
-		wh.addItemToShelf(0, productTest);
-		wh.addItemToShelf(0, productTest);
-		wh.addItemToShelf(0, productTest);
-		wh.addItemToShelf(0, productTest);
+		productPlacer();
 		
 		boolean isEmpty = wh.getShelf(0).isEmptyShelf();
 		assertFalse(isEmpty);
@@ -50,11 +46,7 @@ public class StoreTest {
 	public void GivenAFullShelfDecreaseSizeAfterPickOne() {
 		int expectedElementsInShelf = 4;
 
-		wh.addItemToShelf(0, productTest);
-		wh.addItemToShelf(0, productTest);
-		wh.addItemToShelf(0, productTest);
-		wh.addItemToShelf(0, productTest);
-		wh.addItemToShelf(0, productTest);
+		productPlacer();
 		boolean isFull = wh.getShelf(0).isFull();
 		assertTrue(isFull);
 
@@ -66,17 +58,21 @@ public class StoreTest {
 
 	@Test
 	public void GivenAFullShelfTakeAllProduc() {
-		wh.addItemToShelf(0, productTest);
-		wh.addItemToShelf(0, productTest);
-		wh.addItemToShelf(0, productTest);
-		wh.addItemToShelf(0, productTest);
-		wh.addItemToShelf(0, productTest);
+		productPlacer();
 		boolean isFull = wh.getShelf(0).isFull();
 		assertTrue(isFull);
 
 		store.getProduct();
-		isFull = wh.getShelf(0).isFull();
+		isFull = wh.getShelf(0).isEmptyShelf();
 		assertFalse(isFull);
 	}
-	
+
+	private void productPlacer() {
+		wh.addItemToShelf(0, productTest);
+		wh.addItemToShelf(0, productTest);
+		wh.addItemToShelf(0, productTest);
+		wh.addItemToShelf(0, productTest);
+		wh.addItemToShelf(0, productTest);
+	} 
+
 }

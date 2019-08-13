@@ -30,47 +30,45 @@ public class ShelfTest {
 	@Test
 	public void GivenAllElementChangeShelfState() {
 		boolean expectedState = false;
-		
-		testShelf.placeProduct(productTest);
-		testShelf.placeProduct(productTest);
-		testShelf.placeProduct(productTest);
-		testShelf.placeProduct(productTest);
-		testShelf.placeProduct(productTest);
-		testShelf.placeProduct(productTest);
-		boolean isEmptyShelf=testShelf.isEmptyShelf();
-		assertFalse(isEmptyShelf);
-		
+
+		productPlacer();
+		boolean isFull=testShelf.isFull();
+		assertTrue(isFull);
 		boolean actualState = testShelf.isEmptyShelf();
 		
 		assertEquals(expectedState, actualState);
 	}
 	@Test
 	public void GivenAFullShelfCheckElementsAfterpickOne() {		
-		testShelf.placeProduct(productTest);
-		testShelf.placeProduct(productTest);
-		testShelf.placeProduct(productTest);
-		testShelf.placeProduct(productTest);
-		testShelf.placeProduct(productTest);
+		productPlacer();
+		boolean isFull = testShelf.isFull();
+		assertTrue(isFull);
 		
 		testShelf.pickUpPrduct(0);
-		
 		boolean notFull = testShelf.isFull();
+		
 		assertFalse(notFull);
 		
 	}
 	@Test
 	public void GivenAFullShelfDecreaseSizeWhenPickOne() {
 		int expectedElementsInShelf = 4;
-
-		testShelf.placeProduct(productTest);
-		testShelf.placeProduct(productTest);
-		testShelf.placeProduct(productTest);
-		testShelf.placeProduct(productTest);
-		testShelf.placeProduct(productTest);
+		productPlacer();
+		boolean isFull = testShelf.isFull();
+		assertTrue(isFull);
 
 		testShelf.pickUpPrduct(0);
 		int actualElementsInShelf = testShelf.elementsInShelf();
 
 		assertEquals(expectedElementsInShelf, actualElementsInShelf);
+	}
+	
+	private void productPlacer() {	
+		testShelf.placeProduct(productTest);
+		testShelf.placeProduct(productTest);
+		testShelf.placeProduct(productTest);
+		testShelf.placeProduct(productTest);
+		testShelf.placeProduct(productTest);
+		
 	}
 }
