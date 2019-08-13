@@ -4,18 +4,17 @@ import facotry.AbstractModels.Chair;
 import facotry.AbstractModels.Pot;
 import facotry.AbstractModels.ProductsFactory;
 
-public class ToyFactory extends ProductsFactory{
+public class ToyFactory extends ProductsFactory {
 
-	@Override
-	public Pot createAPot() {
-		return new ToyPot();
-	}
+    @Override
+    public Pot createAPot() {
+        return new ToyPot();
+    }
 
-	@Override
-	public Chair createAChair() {		
-		return new ToyChair();
-	}
+    @Override
+    public Chair createAChair() {
+        return new ToyChair();
+    }
 
 
-    
 }

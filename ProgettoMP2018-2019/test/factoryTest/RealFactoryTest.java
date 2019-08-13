@@ -2,6 +2,8 @@ package factoryTest;
 
 import static org.junit.Assert.*;
 
+import factory.RealChair;
+import factory.RealPot;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -21,9 +23,10 @@ public class RealFactoryTest {
 
 	@Test
 	public void checkPotCreation() {	
-		Pot createdPot = realFactory.createAPot();
-	
-		assertNotNull(createdPot);
+		Pot factoryCreatedPot = realFactory.createAPot();
+
+		assertNotNull(factoryCreatedPot);
+		assertEquals(factoryCreatedPot.getClass(), RealPot.class);
 	}
 	
 	@Test
@@ -31,6 +34,7 @@ public class RealFactoryTest {
 		Chair createdChair = realFactory.createAChair();
 		
 		assertNotNull(createdChair);
+		assertEquals(createdChair.getClass(), RealChair.class);
 	}
 
 }

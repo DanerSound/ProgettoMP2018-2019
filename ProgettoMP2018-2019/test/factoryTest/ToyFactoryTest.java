@@ -10,26 +10,25 @@ import facotry.AbstractModels.Pot;
 import factory.ToyFactory;
 
 public class ToyFactoryTest {
-	
-	private ToyFactory toyFactory;
-	
-	@Before
-	public void initFixture() {
-		toyFactory= new ToyFactory();
 
-	}
-	
-	@Test
-	public void checkPotCreation() {	
-		Pot createdPot = toyFactory.createAPot();
-	
-		assertNotNull(createdPot);
-	}
-	
-	@Test
-	public void checkChairCreation() {
-		Chair createdChair = toyFactory.createAChair();
-		
-		assertNotNull(createdChair);
-	}
+    private ToyFactory toyFactory;
+
+    @Before
+    public void initFixture() {
+        toyFactory = new ToyFactory();
+    }
+
+    @Test
+    public void checkPotCreation() {
+        Pot createdPot = toyFactory.createAPot();
+
+        assertNotNull(createdPot);
+    }
+
+    @Test
+    public void checkChairCreation() {
+        Chair createdChair = toyFactory.createAChair();
+
+        assertNotNull(createdChair);
+    }
 }
