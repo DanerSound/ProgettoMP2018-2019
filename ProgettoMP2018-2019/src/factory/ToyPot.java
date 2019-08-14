@@ -5,7 +5,7 @@ import facotry.AbstractModels.Pot;
 public class ToyPot extends Pot {
 
     @Override
-    public ToyPot createPot() {
+    public ToyPot createAPot() {
         return new ToyPot();
     }
 

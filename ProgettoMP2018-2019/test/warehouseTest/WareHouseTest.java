@@ -7,6 +7,7 @@ import abstractModels.Product;
 import warehouse.WareHouse;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 public class WareHouseTest {
@@ -26,8 +27,8 @@ public class WareHouseTest {
 		int expectedShelfSize = 1;
 
 		warehouse.getShelf(0).placeProduct(productTest);
+		
 		int actualShelfSize = warehouse.getShelf(0).elementsInShelf();
-
 		assertEquals(expectedShelfSize, actualShelfSize);
 	}
 
@@ -35,8 +36,8 @@ public class WareHouseTest {
 	public void GivenAllElementsToShelfCheckState() {
 		productPlacer();
 
-		boolean actualState = warehouse.IsWareHouseFull();
-		assertTrue(actualState);
+		boolean actualState = warehouse.getShelf(0).isEmptyShelf();
+		assertFalse(actualState);
 	}
 
 	@Test
