@@ -11,28 +11,27 @@ import facotry.AbstractModels.Chair;
 import facotry.AbstractModels.Pot;
 import factory.RealFactory;
 
-
 public class RealFactoryTest {
-	
+
 	private RealFactory realFactory;
-	
+
 	@Before
 	public void initFixture() {
-			realFactory = new RealFactory();	
+		realFactory = new RealFactory();
 	}
 
 	@Test
-	public void checkPotCreation() {	
-		Pot factoryCreatedPot = realFactory.createAPot();
+	public void checkPotCreation() {
+		Pot createdPot = realFactory.createAPot();
 
-		assertNotNull(factoryCreatedPot);
-		assertEquals(factoryCreatedPot.getClass(), RealPot.class);
+		assertNotNull(createdPot);
+		assertEquals(createdPot.getClass(), RealPot.class);
 	}
-	
+
 	@Test
 	public void checkChairCreation() {
 		Chair createdChair = realFactory.createAChair();
-		
+
 		assertNotNull(createdChair);
 		assertEquals(createdChair.getClass(), RealChair.class);
 	}

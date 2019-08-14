@@ -7,28 +7,32 @@ import org.junit.Test;
 
 import facotry.AbstractModels.Chair;
 import facotry.AbstractModels.Pot;
+import factory.ToyChair;
 import factory.ToyFactory;
+import factory.ToyPot;
 
 public class ToyFactoryTest {
 
-    private ToyFactory toyFactory;
+	private ToyFactory toyFactory;
 
-    @Before
-    public void initFixture() {
-        toyFactory = new ToyFactory();
-    }
+	@Before
+	public void initFixture() {
+		toyFactory = new ToyFactory();
+	}
 
-    @Test
-    public void checkPotCreation() {
-        Pot createdPot = toyFactory.createAPot();
+	@Test
+	public void checkPotCreation() {
+		Pot createdPot = toyFactory.createAPot();
 
-        assertNotNull(createdPot);
-    }
+		assertNotNull(createdPot);
+		assertEquals(createdPot.getClass(), ToyPot.class);
+	}
 
-    @Test
-    public void checkChairCreation() {
-        Chair createdChair = toyFactory.createAChair();
+	@Test
+	public void checkChairCreation() {
+		Chair createdChair = toyFactory.createAChair();
 
-        assertNotNull(createdChair);
-    }
+		assertNotNull(createdChair);
+		assertEquals(createdChair.getClass(), ToyChair.class);
+	}
 }
