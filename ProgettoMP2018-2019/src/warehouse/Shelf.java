@@ -46,5 +46,9 @@ public class Shelf {
 	public boolean isEmptyShelf() {
 		return emptyShelf;
 	}
+	
+	public Product getProduct(int postion) {
+		return shelf.get(postion);		
+	}
 
 }
