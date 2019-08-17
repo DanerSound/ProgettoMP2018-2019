@@ -1,4 +1,4 @@
-package facotry.AbstractModels;
+package factory.AbstractModels;
 
 import abstractModels.Product;
 

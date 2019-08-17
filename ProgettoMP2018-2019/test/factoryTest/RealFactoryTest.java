@@ -4,11 +4,12 @@ import static org.junit.Assert.*;
 
 import factory.RealChair;
 import factory.RealPot;
+import factory.AbstractModels.Chair;
+import factory.AbstractModels.Pot;
+
 import org.junit.Before;
 import org.junit.Test;
 
-import facotry.AbstractModels.Chair;
-import facotry.AbstractModels.Pot;
 import factory.RealFactory;
 
 public class RealFactoryTest {

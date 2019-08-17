@@ -1,6 +1,6 @@
 package factory;
 
-import facotry.AbstractModels.Chair;
+import factory.AbstractModels.Chair;
 
 public class ToyChair extends Chair {
 

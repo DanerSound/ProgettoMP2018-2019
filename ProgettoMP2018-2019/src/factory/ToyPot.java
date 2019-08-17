@@ -1,6 +1,6 @@
 package factory;
 
-import facotry.AbstractModels.Pot;
+import factory.AbstractModels.Pot;
 
 public class ToyPot extends Pot {
 

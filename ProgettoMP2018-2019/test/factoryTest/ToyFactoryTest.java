@@ -5,11 +5,11 @@ import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
 
-import facotry.AbstractModels.Chair;
-import facotry.AbstractModels.Pot;
 import factory.ToyChair;
 import factory.ToyFactory;
 import factory.ToyPot;
+import factory.AbstractModels.Chair;
+import factory.AbstractModels.Pot;
 
 public class ToyFactoryTest {
 
