@@ -1,7 +1,7 @@
 package warehouse;
 
 import abstractModels.AbstractSubj;
-import abstractModels.Product;
+import factory.AbstractModels.Product;
 
 public class WareHouse extends AbstractSubj {
 
@@ -48,6 +48,4 @@ public class WareHouse extends AbstractSubj {
 		return wareHouseShelves;
 	}
 	
-	
-
 }

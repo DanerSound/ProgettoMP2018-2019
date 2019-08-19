@@ -3,7 +3,7 @@ package warehouseTest;
 import org.junit.Before;
 import org.junit.Test;
 
-import abstractModels.Product;
+import factory.AbstractModels.Product;
 import warehouse.Store;
 import warehouse.WareHouse;
 

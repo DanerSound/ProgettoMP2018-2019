@@ -1,7 +1,5 @@
 package factory.AbstractModels;
 
-import abstractModels.Product;
-
 public abstract class Chair implements Product {
     public abstract Chair createAChair();
 

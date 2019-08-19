@@ -8,9 +8,9 @@ import org.junit.Test;
 import factory.RealChair;
 
 public class RealChairTest {
-	
+
 	private RealChair realchair;
-	
+
 	@Before
 	public void initFixture() {
 		realchair = new RealChair();
@@ -19,7 +19,7 @@ public class RealChairTest {
 	@Test
 	public void checkChairCreation() {
 		RealChair testChair = realchair.createAChair();
-		
+
 		assertNotNull(testChair);
 		assertEquals(testChair.getClass(), RealChair.class);
 	}

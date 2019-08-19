@@ -23,5 +23,4 @@ public class ToyPotTest {
 		assertNotNull(testpot);
 		assertEquals(testpot.getClass(), ToyPot.class);
 	}
-
 }

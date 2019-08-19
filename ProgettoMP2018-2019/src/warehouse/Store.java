@@ -1,7 +1,7 @@
 package warehouse;
 
 import abstractModels.AbstractObs;
-import abstractModels.Product;
+import factory.AbstractModels.Product;
 
 public class Store implements AbstractObs {
 

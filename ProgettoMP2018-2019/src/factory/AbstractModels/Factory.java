@@ -1,6 +1,6 @@
 package factory.AbstractModels;
 
-public abstract class ProductsFactory {
+public abstract class Factory {
 	public abstract Pot createAPot();
 	public abstract Chair createAChair();
 	
